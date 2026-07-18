@@ -16,21 +16,29 @@ Cada skill es un archivo `SKILL.md` con frontmatter (`name`, `description`) segu
 
 ## Instalación
 
-### Opción 1: Claude Code
+### Opción 1: skills.sh (recomendada)
+
+Instala con el [CLI de skills.sh](https://skills.sh):
+
+```bash
+npx skills add etejedaw/uach-thesis-skills
+```
+
+### Opción 2: Claude Code (manual)
 
 Copia la carpeta de la skill al directorio correspondiente:
 
 ```bash
 # A nivel de usuario
-cp -r thesis-format ~/.claude/skills/
+cp -r skills/thesis-format ~/.claude/skills/
 
 # O a nivel de proyecto
-cp -r thesis-format .claude/skills/
+cp -r skills/thesis-format .claude/skills/
 ```
 
-### Opción 2: Otros asistentes (Cursor, Copilot, ChatGPT, etc.)
+### Opción 3: Otros asistentes (Cursor, Copilot, ChatGPT, etc.)
 
-El contenido de `thesis-format/SKILL.md` puede usarse directamente como:
+El contenido de `skills/thesis-format/SKILL.md` puede usarse directamente como:
 
 - **Reglas de proyecto** (`.cursorrules`, `.github/copilot-instructions.md`, etc.)
 - **System prompt** o **instrucciones personalizadas**
@@ -38,7 +46,7 @@ El contenido de `thesis-format/SKILL.md` puede usarse directamente como:
 
 Basta con copiar el cuerpo del archivo (después del frontmatter `---`) y pegarlo donde tu herramienta admita reglas o instrucciones.
 
-### Opción 3: Lectura directa
+### Opción 4: Lectura directa
 
 El archivo también funciona como referencia en Markdown legible por humanos.
 
