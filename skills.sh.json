@@ -1,0 +1,10 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "groupings": [
+    {
+      "title": "Tesis UACh",
+      "description": "Skills basadas en la pauta oficial de formato de tesis de la Escuela de Ingeniería Civil en Informática (UACh).",
+      "skills": ["thesis-format"]
+    }
+  ]
+}
