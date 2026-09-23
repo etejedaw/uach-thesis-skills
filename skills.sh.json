@@ -3,8 +3,8 @@
   "groupings": [
     {
       "title": "Tesis UACh",
-      "description": "Skills basadas en la pauta oficial de formato de tesis de la Escuela de Ingeniería Civil en Informática (UACh).",
-      "skills": ["thesis-format"]
+      "description": "Skills para redactar y compilar la tesis según la pauta oficial de formato de la Escuela de Ingeniería Civil en Informática (UACh).",
+      "skills": ["thesis-format", "thesis-build"]
     }
   ]
 }

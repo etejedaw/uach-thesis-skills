@@ -1,0 +1,21 @@
+name: thesis-build
+
+services:
+  latex:
+    # TeX Live 2026 (esquema full), fijada por digest para que la tesis compile igual durante todo su desarrollo.
+    # El digest apunta al índice multiarquitectura (amd64 y arm64). Se puede reemplazar con TEXLIVE_IMAGE.
+    image: ${TEXLIVE_IMAGE:-texlive/texlive:latest@sha256:7334b00bf8e7a0996f7ddd65482363aaf7711d372e569f3ea78509619e3083ff}
+    user: "${LATEX_UID:-1000}:${LATEX_GID:-1000}"
+    working_dir: /src
+    volumes:
+      - ${THESIS_SRC:?Falta THESIS_SRC (carpeta del archivo .tex principal)}:/src
+      - ${THESIS_OUT:?Falta THESIS_OUT (carpeta de salida del PDF)}:/out
+    command:
+      - latexmk
+      - -${LATEX_ENGINE:-xelatex}
+      - -interaction=nonstopmode
+      - -halt-on-error
+      - -file-line-error
+      - -auxdir=/out/aux
+      - -outdir=/out
+      - ${THESIS_MAIN:?Falta THESIS_MAIN (nombre del archivo .tex principal)}
